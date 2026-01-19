@@ -2,7 +2,6 @@
 
 import { ClipboardEdit, Home, Stethoscope, AlertTriangle, BookOpen } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { openModal } from '@/store/slices/uiSlice';
@@ -74,28 +73,26 @@ export function QuickActions() {
             const isDisabled = remaining !== null && remaining <= 0;
 
             return (
-              <Button
+              <Card 
                 key={action.id}
-                variant="outline"
-                className="h-auto flex-col items-start gap-2 p-4 text-left bg-transparent"
-                onClick={() => dispatch(openModal(action.modal))}
-                disabled={isDisabled}
+                className={`cursor-pointer transition-colors hover:bg-accent ${isDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                onClick={() => !isDisabled && dispatch(openModal(action.modal))}
               >
-                <div className="flex w-full items-center justify-between">
-                  <action.icon className="h-5 w-5 text-primary" />
-                  {remaining !== null && (
-                    <Badge variant={remaining > 0 ? 'secondary' : 'destructive'} className="text-xs">
-                      {remaining} left
-                    </Badge>
-                  )}
-                </div>
-                <div>
-                  <p className="font-medium">{action.title}</p>
-                  <p className="text-xs text-muted-foreground line-clamp-2">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <action.icon className="h-5 w-5 text-primary" />
+                    {remaining !== null && (
+                      <Badge variant={remaining > 0 ? 'secondary' : 'destructive'} className="text-xs">
+                        {remaining} left
+                      </Badge>
+                    )}
+                  </div>
+                  <h3 className="font-medium text-sm mb-1 truncate">{action.title}</h3>
+                  <p className="text-xs text-muted-foreground break-words line-clamp-2">
                     {action.description}
                   </p>
-                </div>
-              </Button>
+                </CardContent>
+              </Card>
             );
           })}
         </div>

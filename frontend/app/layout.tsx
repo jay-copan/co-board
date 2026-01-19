@@ -10,10 +10,15 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'WorkFlow - Employee Management Platform',
+  title: 'co-board',
   description: 'Centralized employee attendance and management platform for modern organizations',
   keywords: ['employee management', 'attendance tracking', 'HR platform', 'workforce management'],
-    generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: '/copan.png',
+    shortcut: '/copan.png',
+    apple: '/copan.png',
+  },
 }
 
 export const viewport: Viewport = {

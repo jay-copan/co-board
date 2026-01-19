@@ -17,6 +17,7 @@ type ViewType = 'weekly' | 'monthly' | 'yearly';
 export function WorkTimeGraph() {
   const [view, setView] = useState<ViewType>('weekly');
   const attendance = useAppSelector((state) => state.attendance.data);
+  const theme = useAppSelector((state) => state.ui.theme);
 
   const chartData = useMemo(() => {
     const today = new Date();
@@ -154,8 +155,8 @@ export function WorkTimeGraph() {
                       entry.status === 'WEEKEND' || entry.status === 'HOLIDAY'
                         ? 'hsl(var(--muted))'
                         : entry.isOnTime
-                        ? 'hsl(var(--chart-1))'
-                        : 'hsl(var(--destructive))'
+                        ? '#3b82f6'
+                        : '#ef4444'
                     }
                   />
                 ))}
@@ -165,7 +166,7 @@ export function WorkTimeGraph() {
         </ChartContainer>
         <div className="mt-4 flex items-center justify-center gap-6 text-sm">
           <div className="flex items-center gap-2">
-            <div className="h-3 w-3 rounded-sm bg-chart-1" />
+            <div className="h-3 w-3 rounded-sm bg-blue-500" />
             <span className="text-muted-foreground">On Time</span>
           </div>
           <div className="flex items-center gap-2">
