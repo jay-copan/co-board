@@ -41,10 +41,14 @@ export function Navbar({ isTranslucent = false }: NavbarProps) {
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">W</span>
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg">
+            <img 
+              src="/copan.png" 
+              alt="Logo" 
+              className="h-7 w-7 object-contain"
+            />
           </div>
-          <span className="text-xl font-semibold text-foreground">WorkFlow</span>
+          <span className="text-xl font-semibold text-foreground">co-board</span>
         </Link>
 
         {/* Desktop Actions */}

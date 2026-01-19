@@ -113,12 +113,16 @@ export function AppSidebar({ children }: AppSidebarProps) {
     <SidebarProvider>
       <div className="flex min-h-screen w-full">
         <Sidebar>
-          <SidebarHeader className="border-b border-sidebar-border px-4 py-4">
+          <SidebarHeader className="  px-4 py-4">
             <Link href="/dashboard" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sidebar-primary">
-                <span className="text-base font-bold text-sidebar-primary-foreground">W</span>
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg">
+                <img 
+                  src="/copan.png" 
+                  alt="Logo" 
+                  className="h-6 w-6 object-contain"
+                />
               </div>
-              <span className="text-lg font-semibold text-sidebar-foreground">WorkFlow</span>
+              <span className="text-lg font-semibold text-sidebar-foreground">co-board</span>
             </Link>
           </SidebarHeader>
 
@@ -253,8 +257,12 @@ export function AppSidebar({ children }: AppSidebarProps) {
         <main className="flex-1 overflow-auto">
           <div className="sticky top-0 z-40 flex h-14 items-center gap-4 border-b border-border bg-background px-4 md:hidden">
             <SidebarTrigger />
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-              <span className="text-base font-bold text-primary-foreground">W</span>
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg">
+              <img 
+                src="/copan.png" 
+                alt="Logo" 
+                className="h-6 w-6 object-contain"
+              />
             </div>
             <span className="text-lg font-semibold">WorkFlow</span>
           </div>
