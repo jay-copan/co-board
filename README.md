@@ -1,0 +1,1 @@
+This is an internal tool under development for copan-consultancy-services. This tool aims at optimizing employee relations and managing their work stats.
